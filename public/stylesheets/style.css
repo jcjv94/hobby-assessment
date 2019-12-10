@@ -1,0 +1,16 @@
+body {
+  padding: 50px;
+  font: 14px "sans-serif", Helvetica, Arial;
+}
+
+a {
+  color: #00B7FF;
+}
+
+form {
+  display: inline;
+}
+
+#block {
+  display: block;
+}

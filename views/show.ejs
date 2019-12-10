@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+
+<body>
+    <a href="/"> Back to Homepage </a>
+    <h1> Hobby Details Page </h1>
+
+    <div>Hobby Name: <%= hobby.name%></div>
+    <div>Hobby Description: <%= hobby.description%></div>
+
+
+    <h3>Update the Hobby Below! </h3>
+    <form action="/<%= hobby._id %>?_method=PUT" method="POST">
+        <input type="text" name="name" value="<%= hobby.name%>">
+        <br>
+        <input type="text" name="description" value="<%= hobby.description %>">
+        <br>
+        <input value="Update Hobby" type="submit">
+    </form>
+
+    <hr>
+    <h3>Delete Hobby?</h3>
+    <form action="/<%= hobby._id %>?_method=DELETE" method="POST">
+        <input style="color: white; background-color: red;" type="submit" value="Delete Coding">
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1><%= title %></h1>
+
+  <%if (hobbies.length){%>
+  <ul>
+    <% hobbies.forEach((hobby,idx) =>{%>
+    <li class="inline"><%= hobby.name%> - 
+      <form action="/<%= hobby._id %>?_method=DELETE" method="POST">
+        <a href="/detail/<%=hobby._id%>" class="inline"> View Details </a>
+        <input style="color: white; background-color: red;" type="submit" value="X" id="block">
+      </form>
+    </li>
+    <%})%>
+  </ul>
+  <% }else{ %>
+  <p>No Hobbies Here!</p>
+  <%};%>
+  <br>
+  <hr>
+  <h2>Add New Hobby!</h2>
+  <div>
+    <form action="/" method="POST">
+      <input type="text" name="name" placeholder="Hobby name">
+      <br>
+      <input type="text" name="description" placeholder="Hobby description" style="height: 30px;">
+      <br>
+      <input type="submit" value="Submit Hobby">
+    </form>
+
+
+  </div>
+</body>
+
+</html>
